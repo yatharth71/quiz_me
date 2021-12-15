@@ -3,57 +3,50 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ImgSlider from "./ImgSlider";
+import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
-
-  let settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true
-  }
-
   return (
-    <Container>
-      <Navbar>
-        <NavBrand src="/logo192.png" />
-        <NavLinks>
-          <Wrap href="#">HOME</Wrap>
-          <Wrap href="#">ABOUT US</Wrap>
-          <Wrap href="#">SIGN UP</Wrap>
-        </NavLinks>
-      </Navbar>
-      <Content>
-        <Heading>The 100% FUN PLATFORM FOR LEARNERS</Heading>
-        <CreateBtn>
-          <h1>Create a QUIZ</h1>
-          <button>CREATE</button>
-        </CreateBtn>
-        <JoinBtn>
-          <h1>Join a QUIZ</h1>
-          <button>JOIN</button>
-        </JoinBtn>
-        <Carousel {...settings}>
-          <WrapCarousel>
-            <img src="https://media.istockphoto.com/photos/and-a-concept-yellow-question-mark-glowing-amid-black-question-marks-picture-id1305169776?b=1&k=20&m=1305169776&s=170667a&w=0&h=mpYdh2MzGN_rqxoRNlO5KWGCCq3ZktzSfp-wA0nD9no=" alt="First Image of the Carousel" />
-          </WrapCarousel>
-        </Carousel>
-      </Content>
-    </Container>
+      <Container>
+        <Navbar>
+          <NavBrand src="/logo192.png" />
+          <NavLinks>
+            <Wrap href="/">
+              HOME        
+            </Wrap>
+            <Wrap href="/">
+              ABOUT US
+            </Wrap>
+            <Wrap href="/register">
+              LOGIN IN
+            </Wrap>
+          </NavLinks>
+        </Navbar>
+        <Content>
+          <Heading>The 100% FUN PLATFORM FOR LEARNERS</Heading>
+          <CreateBtn>
+            <h1>Create a QUIZ</h1>
+            <button>CREATE</button>
+          </CreateBtn>
+          <JoinBtn>
+            <h1>Join a QUIZ</h1>
+            <button>JOIN</button>
+          </JoinBtn>
+          <ImgSlider />
+        </Content>
+      </Container>
   );
 }
 
 export default Home;
 
 const Container = styled.main`
-  @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
   * {
     box-sizing: border-box;
   }
+  overflow: hidden;
 `
 
 const Navbar = styled.div`
@@ -85,6 +78,7 @@ const Wrap = styled.a`
   font-family: "Oswald", sans-serif;
   margin-inline: 10px;
   font-size: 20px;
+  cursor: pointer;
 `
 
 const Content = styled.div``
@@ -146,12 +140,4 @@ const JoinBtn = styled.div`
       
     }
   }
-`
-
-const Carousel = styled(Slider) `
-
-`
-
-const WrapCarousel = styled.div `
-
 `
