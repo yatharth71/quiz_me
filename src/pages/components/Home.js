@@ -7,7 +7,7 @@ import ImgSlider from "./ImgSlider";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home({authorized}) {
   return (
       <Container>
         <Navbar>
@@ -31,8 +31,8 @@ function Home() {
             <button>CREATE</button>
           </CreateBtn>
           <JoinBtn>
-            <h1>Join a QUIZ</h1>
-            <button>JOIN</button>
+            <h1>Start a Random QUIZ</h1>
+            <button href="/random-quiz">Start</button>
           </JoinBtn>
           <ImgSlider />
         </Content>

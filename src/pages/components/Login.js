@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { auth } from "./firebase"
+import { useHistory } from "react-router-dom"
 
 function Login() {
+
+    let history = useHistory();
 
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
@@ -74,7 +77,9 @@ function Login() {
                         setLoginPassword(event.target.value);
                     }}
                 />
-                <button onClick={login}>Login</button>
+                <button onClick={login} onClick={() => {
+                    history.push("/")
+                }}>Login</button>
             </div>
 
             <h4>USER LOGGED IN: {user?.email}</h4>

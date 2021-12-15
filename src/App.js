@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/"><Home /></Route>
+          <Route exact path="/"><Home authorized={}/></Route>
           <Route exact path="/register"><Login /></Route>
       </Switch>
     </Router>
