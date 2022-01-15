@@ -98,6 +98,10 @@ function RandomQuiz() {
                         Check Answer
                     </CheckBtn>
                     <br />
+                    <Tip>
+                        🔥 Hot Tip: Reload the Page if Question is not VISIBLE !
+                    </Tip>
+                    <br />
                     <Result className="result">
 
                     </Result>
@@ -176,4 +180,9 @@ const Result = styled.p`
     font-size: 50px;    
     margin-top: -70px;
     font-family: "Cascadia Code";
+`
+
+const Tip = styled.h3 `
+    font-family: "Fira Code"
+    font-weight: 20px;
 `
