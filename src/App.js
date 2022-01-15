@@ -1,14 +1,14 @@
 import './App.css';
 import Home from './pages/components/Home';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Login from './pages/components/Login'
+import RandomQuiz from './pages/components/RandomQuiz';
 
 function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/"><Home authorized={}/></Route>
-          <Route exact path="/register"><Login /></Route>
+          <Route exact path="/"><Home /></Route>
+          <Route exact path="/random-quiz"><RandomQuiz /></Route>
       </Switch>
     </Router>
   )

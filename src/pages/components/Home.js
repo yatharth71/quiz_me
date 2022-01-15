@@ -6,37 +6,35 @@ import "slick-carousel/slick/slick-theme.css";
 import ImgSlider from "./ImgSlider";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom"
 
-function Home({authorized}) {
+function Home() {
+  let history = useHistory();
+
   return (
-      <Container>
-        <Navbar>
-          <NavBrand src="/logo192.png" />
-          <NavLinks>
-            <Wrap href="/">
-              HOME        
-            </Wrap>
-            <Wrap href="/">
-              ABOUT US
-            </Wrap>
-            <Wrap href="/register">
-              LOGIN IN
-            </Wrap>
-          </NavLinks>
-        </Navbar>
-        <Content>
-          <Heading>The 100% FUN PLATFORM FOR LEARNERS</Heading>
-          <CreateBtn>
-            <h1>Create a QUIZ</h1>
-            <button>CREATE</button>
-          </CreateBtn>
-          <JoinBtn>
-            <h1>Start a Random QUIZ</h1>
-            <button href="/random-quiz">Start</button>
-          </JoinBtn>
-          <ImgSlider />
-        </Content>
-      </Container>
+    <Container>
+      <Navbar>
+        <NavBrand src="/logo192.png" />
+        <NavLinks>
+          <Wrap href="/">
+            HOME
+          </Wrap>
+          <Wrap href="/">
+            ABOUT US
+          </Wrap>
+        </NavLinks>
+      </Navbar>
+      <Content>
+        <Heading>The 100% FUN PLATFORM FOR LEARNERS</Heading>
+        <JoinBtn>
+          <h1>Start a Random QUIZ</h1>
+          <button onClick={() => {
+              history.push("/random-quiz")
+          }}>Start</button>
+        </JoinBtn>
+        <ImgSlider />
+      </Content>
+    </Container>
   );
 }
 
@@ -57,6 +55,7 @@ const Navbar = styled.div`
   padding: 10px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `
 
 const NavBrand = styled.img`

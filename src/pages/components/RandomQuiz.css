@@ -1,0 +1,15 @@
+.opt-margin {
+    margin-top: 30px;
+}
+
+.selected {
+    color: rgb(8, 45, 56);
+}
+
+.correctAnswer {
+    color: rgb(146, 218, 146);
+}
+
+.inCorrectAnswer {
+    color: rgb(189, 143, 143);
+}
